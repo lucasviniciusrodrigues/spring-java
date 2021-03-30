@@ -3,10 +3,11 @@ package adapter.infrastructure.service;
 import adapter.infrastructure.entity.PersonEntity;
 import adapter.infrastructure.repository.PersonRepository;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-@Component
+@Service
 public class PersonService {
 
     PersonRepository personRepository;
