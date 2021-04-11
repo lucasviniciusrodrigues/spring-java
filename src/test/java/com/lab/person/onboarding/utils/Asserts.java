@@ -1,9 +1,9 @@
-package utils.mocks;
+package com.lab.person.onboarding.utils;
 
-import adapter.infrastructure.entity.PersonEntity;
+import com.lab.person.onboarding.infrastructure.entity.PersonEntity;
 
 import static org.junit.Assert.assertEquals;
-import static utils.mocks.Mocks.getPersonEntity;
+import static com.lab.person.onboarding.utils.Mocks.getPersonEntity;
 
 public class Asserts {
 

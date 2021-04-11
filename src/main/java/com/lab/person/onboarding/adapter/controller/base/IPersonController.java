@@ -1,6 +1,6 @@
-package adapter.controller.base;
+package com.lab.person.onboarding.adapter.controller.base;
 
-import adapter.infrastructure.entity.PersonEntity;
+import com.lab.person.onboarding.infrastructure.entity.PersonEntity;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;

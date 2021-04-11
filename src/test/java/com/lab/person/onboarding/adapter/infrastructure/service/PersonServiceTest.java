@@ -1,7 +1,9 @@
-package adapter.infrastructure.service;
+package com.lab.person.onboarding.adapter.infrastructure.service;
 
-import adapter.infrastructure.entity.PersonEntity;
-import adapter.infrastructure.repository.PersonRepository;
+import com.lab.person.onboarding.infrastructure.entity.PersonEntity;
+import com.lab.person.onboarding.infrastructure.repository.PersonRepository;
+import com.lab.person.onboarding.infrastructure.service.PersonService;
+import com.lab.person.onboarding.utils.Asserts;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,8 +15,7 @@ import java.util.Optional;
 
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
-import static utils.mocks.Asserts.assertPersonEntity;
-import static utils.mocks.Mocks.getPersonEntity;
+import static com.lab.person.onboarding.utils.Mocks.getPersonEntity;
 
 @RunWith(MockitoJUnitRunner.class)
 public class PersonServiceTest {
@@ -39,19 +40,19 @@ public class PersonServiceTest {
     @Test
     public void shouldInsertPersonAtDatabase(){
         personService.insertPerson(Mockito.any());
-        assertPersonEntity(personEntity);
+        Asserts.assertPersonEntity(personEntity);
     }
 
     @Test
     public void shouldDeletePersonAtDatabase(){
         personService.deletePerson(Mockito.anyString());
-        assertPersonEntity(personEntity);
+        Asserts.assertPersonEntity(personEntity);
     }
 
     @Test
     public void shouldGetPersonAtDatabase(){
         personService.getPerson(Mockito.anyString());
-        assertPersonEntity(personEntity);
+        Asserts.assertPersonEntity(personEntity);
     }
 
 }

@@ -1,8 +1,8 @@
-package adapter.controller;
+package com.lab.person.onboarding.adapter.controller;
 
-import adapter.controller.base.IPersonController;
-import adapter.infrastructure.entity.PersonEntity;
-import adapter.infrastructure.service.PersonService;
+import com.lab.person.onboarding.adapter.controller.base.IPersonController;
+import com.lab.person.onboarding.infrastructure.entity.PersonEntity;
+import com.lab.person.onboarding.infrastructure.service.PersonService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -10,7 +10,7 @@ public class PersonController implements IPersonController {
 
     PersonService personService;
 
-    PersonController(PersonService personService){
+    public PersonController(PersonService personService){
         this.personService = personService;
     }
 

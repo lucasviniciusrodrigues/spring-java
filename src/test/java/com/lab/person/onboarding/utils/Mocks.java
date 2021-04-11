@@ -1,6 +1,6 @@
-package utils.mocks;
+package com.lab.person.onboarding.utils;
 
-import adapter.infrastructure.entity.PersonEntity;
+import com.lab.person.onboarding.infrastructure.entity.PersonEntity;
 
 public class Mocks {
 

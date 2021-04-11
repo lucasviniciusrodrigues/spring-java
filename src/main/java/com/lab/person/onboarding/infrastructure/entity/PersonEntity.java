@@ -1,4 +1,4 @@
-package adapter.infrastructure.entity;
+package com.lab.person.onboarding.infrastructure.entity;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
