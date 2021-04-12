@@ -2,9 +2,7 @@ package com.lab.person.onboarding.infrastructure.service;
 
 import com.lab.person.onboarding.infrastructure.entity.PersonEntity;
 import com.lab.person.onboarding.infrastructure.repository.PersonRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.Optional;
 
 @Service
