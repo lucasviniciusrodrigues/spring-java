@@ -5,6 +5,8 @@ import com.lab.person.onboarding.infrastructure.entity.PersonEntity;
 import com.lab.person.onboarding.infrastructure.service.PersonService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -22,7 +24,7 @@ public class PersonController implements IPersonController {
     }
 
     @Override
-    public PersonEntity postPerson(PersonEntity personEntity) {
+    public PersonEntity postPerson(@RequestBody PersonEntity personEntity) {
         return personService.insertPerson(personEntity);
     }
 

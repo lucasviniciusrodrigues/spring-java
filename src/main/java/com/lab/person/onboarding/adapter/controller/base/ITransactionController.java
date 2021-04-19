@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping("/transaction")
+@RequestMapping("/transaction/v1")
 public interface ITransactionController {
 
     @Operation(summary = "Get transaction from database")
@@ -18,8 +18,8 @@ public interface ITransactionController {
             content = {@Content(mediaType = "application/json",
             schema = @Schema(implementation = TransactionEntity.class))})})
 
-    @GetMapping(value = "/{transactionId}")
-    public TransactionEntity getTransactionById(String transactionId);
+    @GetMapping(value =  "/{transactionId}")
+    public TransactionEntity getTransactionById(@PathVariable String transactionId);
 
     @Operation(summary = "Insert transaction at database")
     @ApiResponses(value = {@ApiResponse (responseCode ="201", description = "Return inserted data",
@@ -33,5 +33,5 @@ public interface ITransactionController {
     @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "Transaction deleted from database")})
 
     @DeleteMapping(value = "/{transaction}" )
-    public ResponseEntity<Object> deleteTransaction(String transactionId);
+    public ResponseEntity<Object> deleteTransaction(@PathVariable String transactionId);
 }

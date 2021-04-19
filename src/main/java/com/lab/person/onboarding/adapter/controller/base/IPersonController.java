@@ -17,7 +17,7 @@ public interface IPersonController {
             @ApiResponse(responseCode = "200", description = "Return founded data",
                     content = { @Content(mediaType = "application/json", schema = @Schema(implementation = PersonEntity.class)) })})
     @GetMapping(value = "/{document}")
-    public PersonEntity getPersonById(String document);
+    public PersonEntity getPersonById(@PathVariable String document);
 
     @Operation(summary = "Insert person at database")
     @ApiResponses(value = {
@@ -37,7 +37,7 @@ public interface IPersonController {
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Person deleted from database")})
     @DeleteMapping(value = "/{document}")
-    public ResponseEntity<Object> deletePerson(String document);
+    public ResponseEntity<Object> deletePerson(@PathVariable String document);
 
 }
 
