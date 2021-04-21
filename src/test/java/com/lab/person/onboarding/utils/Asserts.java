@@ -12,7 +12,7 @@ public class Asserts {
 
         assertEquals(basePersonEntity.getDocument(), personEntity.getDocument());
         assertEquals(basePersonEntity.getName(), personEntity.getName());
-        assertEquals(basePersonEntity.getBirthday(), personEntity.getBirthday());
+        assertEquals(basePersonEntity.getAnotherInfo(), personEntity.getAnotherInfo());
     }
 
 }

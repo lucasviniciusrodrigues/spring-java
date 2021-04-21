@@ -30,6 +30,6 @@ public class TransactionController implements ITransactionController {
     @Override
     public ResponseEntity<Object> deleteTransaction(String transaction){
         transactionService.deleteTransaction(transaction);
-        return new ResponseEntity(HttpStatus.OK);
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 }

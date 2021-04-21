@@ -15,23 +15,18 @@ public interface ITransactionController {
 
     @Operation(summary = "Get transaction from database")
     @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "Return Transaction from database",
-            content = {@Content(mediaType = "application/json",
-            schema = @Schema(implementation = TransactionEntity.class))})})
-
+            content = {@Content(mediaType = "application/json", schema = @Schema(implementation = TransactionEntity.class))})})
     @GetMapping(value =  "/{transactionId}")
     public TransactionEntity getTransactionById(@PathVariable String transactionId);
 
     @Operation(summary = "Insert transaction at database")
     @ApiResponses(value = {@ApiResponse (responseCode ="201", description = "Return inserted data",
-            content = { @Content(mediaType = "application/json",
-            schema = @Schema(implementation = TransactionEntity.class))}) })
-
+            content = { @Content(mediaType = "application/json", schema = @Schema(implementation = TransactionEntity.class))}) })
     @PostMapping()
     public TransactionEntity postTransaction(TransactionEntity transactionEntity);
 
     @Operation(summary = "Delete transaction from database")
-    @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "Transaction deleted from database")})
-
+    @ApiResponses(value = {@ApiResponse(responseCode = "204", description = "Transaction deleted from database")})
     @DeleteMapping(value = "/{transaction}" )
     public ResponseEntity<Object> deleteTransaction(@PathVariable String transactionId);
 }

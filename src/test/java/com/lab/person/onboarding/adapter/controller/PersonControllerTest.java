@@ -28,9 +28,9 @@ public class PersonControllerTest {
     }
 
     @Test
-    public void shouldReturn200() throws Exception {
+    public void shouldReturn204() throws Exception {
         ResponseEntity responseEntity = personController.deletePerson("");
-        assertEquals(responseEntity.getStatusCode(), HttpStatus.OK);
+        assertEquals(responseEntity.getStatusCode(), HttpStatus.NO_CONTENT);
     }
 
 }

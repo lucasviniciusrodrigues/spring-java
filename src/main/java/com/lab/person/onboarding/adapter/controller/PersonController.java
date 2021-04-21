@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class PersonController implements IPersonController {
 
@@ -15,6 +17,11 @@ public class PersonController implements IPersonController {
 
     PersonController(PersonService personService){
         this.personService = personService;
+    }
+
+    @Override
+    public List<PersonEntity> getAll()  {
+        return personService.getAllPersons();
     }
 
     @Override
@@ -35,7 +42,7 @@ public class PersonController implements IPersonController {
     @Override
     public ResponseEntity<Object> deletePerson(String document) {
         personService.deletePerson(document);
-        return new ResponseEntity(HttpStatus.OK);
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 
 }
