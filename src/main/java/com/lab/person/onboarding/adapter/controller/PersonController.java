@@ -5,12 +5,14 @@ import com.lab.person.onboarding.infrastructure.entity.PersonEntity;
 import com.lab.person.onboarding.infrastructure.service.PersonService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
 public class PersonController implements IPersonController {
 
     PersonService personService;
 
-    public PersonController(PersonService personService){
+    PersonController(PersonService personService){
         this.personService = personService;
     }
 
