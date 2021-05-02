@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping("v1/person")
+@RequestMapping("person/v1")
 public interface IPersonController {
 
     @Operation(summary = "Get all persons from database")

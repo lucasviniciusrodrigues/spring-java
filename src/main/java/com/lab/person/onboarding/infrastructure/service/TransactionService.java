@@ -4,6 +4,7 @@ import com.lab.person.onboarding.infrastructure.entity.TransactionEntity;
 import com.lab.person.onboarding.infrastructure.repository.TransactionRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -25,5 +26,9 @@ public class TransactionService {
 
     public void deleteTransaction(String transactionId){
         transactionRepository.deleteById(transactionId);
+    }
+
+    public List<TransactionEntity> getTransactionByDoc(String document) {
+        return transactionRepository.findAllByDocument(document);
     }
 }
