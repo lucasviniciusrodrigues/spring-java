@@ -1,29 +1,19 @@
 package com.lab.person.onboarding.infrastructure.service;
 
-import com.lab.person.onboarding.adapter.controller.TransactionDownloadController;
 import com.lab.person.onboarding.infrastructure.entity.TransactionEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
 
 @Service
 public class DownloadService {
 
-    public void downloadCsv(HttpServletResponse response) throws IOException {
-        response.setContentType("text/csv");
-        response.setHeader("Content-Disposition", "attachment; file=text.csv");
-        TransactionService.(response.getWriter());
+    public static void downloadCsv(PrintWriter writer, List<TransactionEntity> transactionEntityList){
+        writer.write("TransactionID, Document, CardNumber, StoreName, StoreDocument, Value \n");
+        for (TransactionEntity transactionEntity: transactionEntityList){
+            writer.write(transactionEntity.getTransactionId() + "," + transactionEntity.getDocument() + ","
+            + transactionEntity.getCardNumber() + "," + transactionEntity.getStoreName() + "," + transactionEntity.getStoreDocument() + ","
+                    + transactionEntity.getValue() + "\n");
+        }
     }
-
-
-
-//    public void dowloadTransaction(HttpServletResponse response) throws IOException{
-//
-//        String csvFileName = "transações.csv";
-//        response.setContentType("text/csv");
-//
-//
-//
 }

@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequestMapping("/download/v1")
-public interface ITransactionDonwnloadController{
+public interface ITransactionDownloadController{
 
     @Operation(summary = "Get all transactions by document from database")
     @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "Return all transaction from database",
-    content = {@Content(mediaType= "csv", schema = @Schema(implementation = TransactionEntity.class))})})
+            content = {@Content(mediaType= "csv", schema = @Schema(implementation = TransactionEntity.class))})})
 
-    @GetMapping(value = "/{document}")
+    @GetMapping(value = "/{}")
     public TransactionEntity getAll(@PathVariable String document);
 }
