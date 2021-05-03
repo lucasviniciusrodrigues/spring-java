@@ -10,6 +10,6 @@ public class Mocks {
     }
 
     public static TransactionEntity getTransactionEntity() {
-        return new TransactionEntity("78780","9985578547","1234-1123-4556-44567","Loja Da Apple", "11234568790011", 25156);
+        return new TransactionEntity("78780","9985578547","1234-1123-4556-44567","Loja Da Apple", "11234568790011", 150);
     }
 }

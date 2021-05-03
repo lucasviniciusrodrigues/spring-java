@@ -17,6 +17,6 @@ public interface ITransactionDownloadController{
     @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "Return all transaction from database",
             content = {@Content(mediaType= "csv", schema = @Schema(implementation = TransactionEntity.class))})})
 
-    @GetMapping(value = "/{}")
-    public TransactionEntity getAll(@PathVariable String document);
+    @GetMapping(value = "/{transactionId}")
+    public TransactionEntity getAll(@PathVariable String transactionId);
 }
