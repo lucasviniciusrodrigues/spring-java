@@ -30,9 +30,10 @@ public class DatabaseLoader implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
-        LOGGER.info("Registering pre registers into database");
+        LOGGER.info("Inserting pre registers into database");
 
         try(Stream<String> lines = Files.lines(getFilePath())){
+
             lines
                 .filter(line -> !line.startsWith("-"))
                 .filter(line -> !line.isBlank())
