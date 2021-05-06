@@ -1,11 +1,13 @@
 package com.lab.person.onboarding.adapter.controller.base;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.lab.person.onboarding.infrastructure.entity.TransactionEntity;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +20,12 @@ public interface ITransactionController {
             content = {@Content(mediaType = "application/json", schema = @Schema(implementation = TransactionEntity.class))})})
     @GetMapping(value =  "/{transactionId}")
     public TransactionEntity getTransactionById(@PathVariable String transactionId);
+
+    @Operation(summary = "Download transactions by doc")
+    @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "Download transactions by doc",
+            content = {@Content(mediaType = "application/json", schema = @Schema(implementation = TransactionEntity[].class))})})
+    @GetMapping(value =  "/download/{document}", produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
+    public String downloadTransactionsByDocument(@PathVariable String document) throws JsonProcessingException;
 
     @Operation(summary = "Insert transaction at database")
     @ApiResponses(value = {@ApiResponse (responseCode ="201", description = "Return inserted data",

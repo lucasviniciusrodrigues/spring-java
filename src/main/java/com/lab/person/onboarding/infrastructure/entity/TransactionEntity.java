@@ -16,12 +16,12 @@ public class TransactionEntity {
     private String cardNumber;
     private String storeName;
     private String storeDocument;
-    private int value;
+    private BigDecimal value;
 
     public TransactionEntity(){}
 
     public TransactionEntity(String transactionId, String document, String cardNumber, String storeName,
-                             String storeDocument, int value){
+                             String storeDocument, BigDecimal value){
         this.transactionId = transactionId;
         this.document = document;
         this.cardNumber = cardNumber;

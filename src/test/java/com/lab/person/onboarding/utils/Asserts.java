@@ -4,6 +4,7 @@ import com.lab.person.onboarding.infrastructure.entity.PersonEntity;
 import com.lab.person.onboarding.infrastructure.entity.TransactionEntity;
 
 import static com.lab.person.onboarding.utils.Mocks.getTransactionEntity;
+
 import static org.junit.Assert.assertEquals;
 import static com.lab.person.onboarding.utils.Mocks.getPersonEntity;
 

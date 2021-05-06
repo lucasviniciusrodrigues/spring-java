@@ -3,6 +3,8 @@ package com.lab.person.onboarding.utils;
 import com.lab.person.onboarding.infrastructure.entity.PersonEntity;
 import com.lab.person.onboarding.infrastructure.entity.TransactionEntity;
 
+import java.math.BigDecimal;
+
 public class Mocks {
 
     public static PersonEntity getPersonEntity() {
@@ -10,6 +12,6 @@ public class Mocks {
     }
 
     public static TransactionEntity getTransactionEntity() {
-        return new TransactionEntity("78780","9985578547","1234-1123-4556-44567","Loja Da Apple", "11234568790011", 150);
+        return new TransactionEntity("78780","9985578547","1234-1123-4556-44567","Loja Da Apple", "11234568790011", BigDecimal.valueOf(150.0));
     }
 }

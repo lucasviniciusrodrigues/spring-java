@@ -31,4 +31,8 @@ public class TransactionService {
     public void deleteTransaction(String transactionId){
         transactionRepository.deleteById(transactionId);
     }
+
+    public List<TransactionEntity> getTransactionByDoc(String document) {
+        return transactionRepository.findAllByDocument(document);
+    }
 }
